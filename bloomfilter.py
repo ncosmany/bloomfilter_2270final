@@ -1,3 +1,5 @@
+#nothing to run here, just the BloomFilter class definition 
+
 import bitarray
 import mmh3
 import math
@@ -5,7 +7,7 @@ import math
 class BloomFilter():
     def __init__(self, input_size, fpp):
         """input_size - int - number of expected inputs
-        fp - float - false positive probability"""
+        fpp - float - false positive probability"""
     
         self.fpp = fpp
         
@@ -28,20 +30,22 @@ class BloomFilter():
         return int(k)
         
     def add (self, item):
+        """record item as present"""
         for i in range(self.hash_num):
             #i is the seed for each different hashfunction  
             hc = mmh3.hash(item, i)
             
-            #gets "bucket" it should map into
+            #gets "bucket" it should map into aka bit in the bitarray 
             location = hc % self.bitarray_size
             
             #set that bucket aka bit to True 
             self.BF_array[location] = True
     
     def is_present (self, item):
+        """check to see if item is present, remember false positive possible"""
         for i in range(self.hash_num):
-            hc = mmh3.hash(item, i)
-            location = hc % self.bitarray_size
+            hc = mmh3.hash(item, i) #i is the seed which triggers different hash functions 
+            location = hc % self.bitarray_size 
             
             #now check if that spot in the bitarray is false
             if self.BF_array[location] == False:

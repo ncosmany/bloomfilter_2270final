@@ -20,9 +20,13 @@ Complexity - Bloom filters have a space complexity of O(m) where m is the length
 Some notable feautres of this project:
 - bloomfilter.py contains all the class information to set up a bloom filter
 - bloomfilter_tests.py contains code testing functionality of the filter 
-- walthrough.ipynb is a notebook file contains 
-    1. python modules used
-    2. bloom filter equation discussion 
+- walthrough.ipynb is a notebook file which contains 
+    1. discussion of python modules used
+    2. bloom filter equation breakdown 
     3. probability exploration
     4. walkthrough of program using the example scenario of an extensive book collection 
     5. reflection 
+    
+**Instructions to Run **
+
+The walkthrough notebook file includes a section which shows how the bloom filter class and functions can be utilized. You're welcome to run this yourself and adjust the inputs or just observe the scenario I ran (you might have to install some modules). Same for the probability section - feel free to alter the probability and input sizes. The bloomfilter_tests file can also be run. I entered a preset input (n), probability (p), and number of trials, but you're welcome to enter your own values here. 
